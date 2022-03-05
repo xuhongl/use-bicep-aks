@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: webimage 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webimage
+  template:
+    metadata:
+      labels:
+        app: webimage 
+    spec:
+      containers:
+        - name: webimage 
+          image: xxxuhong.azurecr.io/webimage
+          ports:
+          - containerPort: 80
